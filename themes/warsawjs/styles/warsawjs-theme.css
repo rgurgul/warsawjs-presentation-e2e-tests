@@ -97,3 +97,27 @@
 .full .progress div {
   border-color: transparent transparent #f7302f;
 }
+
+.right {
+  width: 50%;
+  float: left;
+}
+
+.right-30 {
+  width: 30%;
+  float: left;
+}
+
+.left {
+  width: 50%;
+  float: right;
+}
+
+.left-70 {
+  width: 70%;
+  float: right;
+}
+
+.left img {
+  width: 100%;
+}

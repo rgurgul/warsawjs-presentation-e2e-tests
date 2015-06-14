@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>WarsawJS Presentation Template</title>
+    <title>End to End application testing</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=792, user-scalable=no">
@@ -11,125 +11,344 @@
     <link rel="stylesheet" href="themes/warsawjs/styles/warsawjs-theme.css">
 </head>
 <body class="list">
-    <header class="caption">
-        <h1>WarsawJS Presentation Template</h1>
-        <p>We talk about JavaScript. Each month in Warsaw, Poland.</p>
-    </header>
+<header class="caption">
+    <h1>End to End application testing</h1>
 
-    <section class="slide front-page">
-        <div>
-            <div class="logo">
-                <img src="themes/warsawjs/pictures/logo.png">
-            </div>
-            <div class="content">
-                <h2>WarsawJS Presentation Template</h2>
-                <p>Author Name <a href="http://twitter.com/author">@author</a>
-            </div>
+    <p>We talk about JavaScript. Each month in Warsaw, Poland.</p>
+</header>
+
+<section class="slide front-page">
+    <div>
+        <div class="logo">
+            <img src="themes/warsawjs/pictures/logo.png">
         </div>
-    </section>
+        <div class="content">
+            <h2>End to End application testing</h2>
 
-    <section class="slide">
-        <div>
-            <h2>Plain Text on Your Slides</h2>
+            <p>Robert Gurgul<a href="http://twitter.com/rgurgul">@rgurgul</a>
+        </div>
+    </div>
+</section>
 
-            <p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt
-                ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco
-                laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in
-                reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat
-                cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.
+<section class="slide">
+    <div>
+        <h2>Testing internet Application (e2e)</h2>
+
+        <ul>
+            <li>
+                Modern web application (SPA) consists of a client layer and backend API - e2e tests works on all these
+                app parts.
+            </li>
+            <li>
+                We create test e2e to check whether the application meets user expectations.
+            </li>
+            <li>
+                The e2e tests should not mocking any snippets or any application layers. Tests should reflect the
+                behavior of the end user.
+            </li>
+        </ul>
+
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>What we test by e2e?</h2>
+        <ul>
+            <li>We cover by them (first of all) the major application scenarios</li>
+            <li>Optional, additional alternative scenarios</li>
+        </ul>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>The advantages of automated tests</h2>
+        <ul>
+            <li>you can safely make changes in our code as well as updating the library.</li>
+            <li>save your time - you can run the tests and go make a cup of tea</li>
+            <li>complex test cases are checking by themselves</li>
+            <li>you write test once but you can run it hundreds of times</li>
+            <li>you can test locally and on a production server</li>
+        </ul>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>The disadvantages of automated tests</h2>
+        <ul>
+            <li>the startup time is long and they are quite slow (vs. to tests Unit)</li>
+            <li>a little precise feedback</li>
+            <li>they may be difficult to debug</li>
+            <li>long time of writing</li>
+            <li>maintaining tests takes time</li>
+            <li>configuration is sometimes difficult</li>
+        </ul>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <br/><br/><br/>
+
+        <h2>How does it work in practice?</h2>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>The tools we will use</h2>
+        <ul>
+            <li>node - development environment</li>
+            <li>jasmine - is a behavior-driven development framework for testing JavaScript code</li>
+            <li>protractor - is an end-to-end test framework for AngularJS applications</li>
+            <li>you will need to have the Java Development Kit (JDK) installed to run the standalone Selenium Server</li>
+        </ul>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <br/><br/><br/>
+
+        <h2>Here we go!</h2>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Setup</h2>
+        <ol>
+            <li>
+                Use npm to install Protractor globally with:
+                <br/>
+                <code>npm install -g protractor</code>
+            </li>
+            <li>
+                The webdriver-manager is a helper tool to get an instance of a Selenium Server running
+                <br/>
+                <code>webdriver-manager update</code>
+            </li>
+            <li>
+                Now start up a server with:
+                <br/>
+                <code>webdriver-manager start</code>
+            </li>
+        </ol>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Protractor needs two files to run</h2>
+        <ul>
+            <li>configuration file</li>
+            <li>spec file</li>
+        </ul>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <div class="right">
+            <br/><br/><br/>
+
+            <p>Protractor configuration file</p>
+        </div>
+        <div class="left">
+            <img src="assets/protractor-config.png" alt="">
+        </div>
+    </div>
+</section>
+
+
+<section class="slide">
+    <div>
+        <div class="right">
+            <br/><br/>
+
+            <p>
+                Jasmine syntax
             </p>
         </div>
-    </section>
-
-    <section class="slide">
-        <div>
-            <h2>All Kind of Lists</h2>
-            <ol>
-                <li>Simple lists are marked with bullets</li>
-                <li>Ordered lists begin with a number</li>
-                <li>You can even nest lists one inside another
-                    <ul>
-                        <li>Or mix their types</li>
-                        <li>But do not go too far</li>
-                        <li>Otherwise audience will be bored</li>
-                    </ul>
-                </li>
-                <li>Look, seven rows exactly!</li>
-            </ol>
+        <div class="left">
+            <img src="assets/jasmine2.png" alt="">
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="slide">
+
+<section class="slide">
+    <div style="padding-top: 50px !important;">
+        <div class="right-30">
+            <br/><br/><br/><br/>
+
+            <p>
+                more complex test
+            </p>
+        </div>
+        <div class="left-70">
+            <img src="assets/it.png" width="100%" alt="">
+        </div>
+    </div>
+</section>
+
+
+<section class="slide">
+    <div>
+        <br/><br/><br/>
+
+        <h2>Debugging</h2>
+    </div>
+</section>
+
+<section class="slide">
+
+    <div>
         <div>
-            <h2>JavaScript Samples</h2>
+            <h2>Protractor tools</h2>
+
+            <div>browser is a global created by Protractor, which is used for browser-level commands such as navigation
+                with
+                browser.get
+            </div>
+        </div>
+        <div>
+            <ul>
+                <li>
+                    browser.pause();
+                </li>
+                <li>
+                    browser.sleep(10000);
+                </li>
+                <li>
+                    console.log(el);
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <div>
+            <h2>Elementor</h2>
+        </div>
+
+        <div>
+            Elementor lets you test Protractor selectors from your browser and IDE. You can enter a protractor locator
+            or expression and elementor will test it against a live protractor instance.
+        </div>
+    </div>
+</section>
+
+
+<section class="slide">
+    <div>
+        <div>
+            <h2>Screenshots</h2>
+        </div>
+
+        <div>
+            <img src="assets/screenshot.png" width="100%" alt=""/>
+        </div>
+    </div>
+</section>
+
+
+<section class="slide">
+    <div>
+        <h2>Useful links:</h2>
+        <ul>
+            <li>Protractor: https://angular.github.io/protractor</li>
+            <li>Protractor tutorial: https://angular.github.io/protractor/#/tutorial</li>
+            <li>Jasmine: http://jasmine.github.io/</li>
+            <li>Elementor: https://github.com/andresdominguez/elementor</li>
+        </ul>
+    </div>
+</section>
+
+
+<!--
+<section class="slide">
+    <div>
+        <h2>JavaScript Samples</h2>
             <pre>
-                <code><mark class="comment">// Crockford style IIFE</mark></code>
+                <code>
+                    <mark class="comment">// Crockford style IIFE</mark>
+                </code>
                 <code>(function () {</code>
-                <code>  var <mark>someVar</mark> = 'value';</code>
-                <code>  console.<mark class="important">log</mark>(someVar);</code>
+                <code> var
+                    <mark>someVar</mark>
+                    = 'value';</code>
+                <code> console.
+                    <mark class="important">log</mark>
+                    (someVar);</code>
                 <code>}());</code>
             </pre>
-        </div>
-    </section>
-    <section class="slide">
-        <div>
-            <h2>Even Tables</h2>
-            <table>
-                <tr>
-                    <th scope="col">Locavore</th>
-                    <th>Umami</th>
-                    <th>Helvetica</th>
-                    <th>Vegan</th>
-                </tr>
-                <tr>
-                    <th scope="row">Fingerstache</th>
-                    <td>Kale</td>
-                    <td>Chips</td>
-                    <td>Keytar</td>
-                </tr>
-                <tr>
-                    <th scope="row">Sriracha</th>
-                    <td>Gluten-free</td>
-                    <td>Ennui</td>
-                    <td>Keffiyeh</td>
-                </tr>
-                <tr>
-                    <th scope="row">Thundercats</th>
-                    <td>Jean</td>
-                    <td>Shorts</td>
-                    <td>Biodiesel</td>
-                </tr>
-                <tr>
-                    <th scope="row">Terry</th>
-                    <td>Richardson</td>
-                    <td>Swag</td>
-                    <td>Blog</td>
-                </tr>
-            </table>
-            <p>It’s good to have information organized.</p>
-        </div>
-    </section>
-
-    <section class="slide cover">
-        <div>
-            <img src="./themes/warsawjs/pictures/bigphoto.jpg" alt="">
-        </div>
-    </section>
-
-    <section class="slide shout">
-        <div>
-            <h2>See you next month at WarsawJS</h2>
-        </div>
-    </section>
-
-    <p class="badge"><a href="https://github.com/warsawjs/presentation-template">Fork me on Github</a></p>
-
-    <div class="progress">
-        <div></div>
     </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Even Tables</h2>
+        <table>
+            <tr>
+                <th scope="col">Locavore</th>
+                <th>Umami</th>
+                <th>Helvetica</th>
+                <th>Vegan</th>
+            </tr>
+            <tr>
+                <th scope="row">Fingerstache</th>
+                <td>Kale</td>
+                <td>Chips</td>
+                <td>Keytar</td>
+            </tr>
+            <tr>
+                <th scope="row">Sriracha</th>
+                <td>Gluten-free</td>
+                <td>Ennui</td>
+                <td>Keffiyeh</td>
+            </tr>
+            <tr>
+                <th scope="row">Thundercats</th>
+                <td>Jean</td>
+                <td>Shorts</td>
+                <td>Biodiesel</td>
+            </tr>
+            <tr>
+                <th scope="row">Terry</th>
+                <td>Richardson</td>
+                <td>Swag</td>
+                <td>Blog</td>
+            </tr>
+        </table>
+        <p>It’s good to have information organized.</p>
+    </div>
+</section>
 
-    <script src="vendor/gamepad/gamepad.js"></script>
-    <script src="vendor/shower/shower.js"></script>
-    <script src="vendor/shower/shower.gamepad.js"></script>
+<section class="slide cover">
+    <div>
+        <img src="./themes/warsawjs/pictures/bigphoto.jpg" alt="">
+    </div>
+</section>
+-->
+
+<section class="slide shout">
+    <div>
+        <h2><span style="color: red;">Thanks</span> and see you next month at WarsawJS</h2>
+    </div>
+</section>
+
+<p class="badge"><a href="https://github.com/warsawjs/presentation-template">Fork me on Github</a></p>
+
+<div class="progress">
+    <div></div>
+</div>
+
+<script src="vendor/gamepad/gamepad.js"></script>
+<script src="vendor/shower/shower.js"></script>
+<script src="vendor/shower/shower.gamepad.js"></script>
 </body>
 </html>
