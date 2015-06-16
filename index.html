@@ -32,19 +32,20 @@
 
 <section class="slide">
     <div>
-        <h2>Testing internet Application (e2e)</h2>
+        <h2>Testing internet Application (E2E)</h2>
 
         <ul>
             <li>
-                Modern web application (SPA) consists of a client layer and backend API - e2e tests works on all these
-                app parts.
+                Modern web application (SPA) consists of a client layer and backend API -
+                E2E tests are executed at all layers of the app.
             </li>
             <li>
-                We create test e2e to check whether the application meets user expectations.
+                E2E tests are not supposed to neither mock any snippets nor any application layers.
+                They should reflect the end user behaviour.
             </li>
             <li>
-                The e2e tests should not mocking any snippets or any application layers. Tests should reflect the
-                behavior of the end user.
+                E2E testing is meant to assess whether the application meets the user’s
+                expectations.
             </li>
         </ul>
 
@@ -53,37 +54,36 @@
 
 <section class="slide">
     <div>
-        <h2>What we test by e2e?</h2>
+        <h2>What we test with E2E?</h2>
         <ul>
-            <li>We cover by them (first of all) the major application scenarios</li>
-            <li>Optional, additional alternative scenarios</li>
+            <li>We cover with them primarily major application scenarios.</li>
+            <li>It is possible to run also some optional, additional alternative scenarios.</li>
         </ul>
     </div>
 </section>
 
 <section class="slide">
     <div>
-        <h2>The advantages of automated tests</h2>
+        <h2>Advantages of automated tests</h2>
         <ul>
-            <li>you can safely make changes in our code as well as updating the library.</li>
-            <li>save your time - you can run the tests and go make a cup of tea</li>
-            <li>complex test cases are checking by themselves</li>
-            <li>you write test once but you can run it hundreds of times</li>
-            <li>you can test locally and on a production server</li>
+            <li>You can safely make changes in your code as well as update the library.</li>
+            <li>You can save your time - you can run the tests and go make a cup of tea.</li>
+            <li>Complex test cases are checked by themselves.</li>
+            <li>You write test once but you can run it hundreds of times.</li>
+            <li>You can test locally and on a production server.</li>
         </ul>
     </div>
 </section>
 
 <section class="slide">
     <div>
-        <h2>The disadvantages of automated tests</h2>
+        <h2>Disadvantages of automated tests</h2>
         <ul>
-            <li>the startup time is long and they are quite slow (vs. to tests Unit)</li>
-            <li>a little precise feedback</li>
-            <li>they may be difficult to debug</li>
-            <li>long time of writing</li>
-            <li>maintaining tests takes time</li>
-            <li>configuration is sometimes difficult</li>
+            <li>The startup time is long and they are quite slow (compared with unit tests).</li>
+            <li>A vague feedback.</li>
+            <li>They may be difficult to debug.</li>
+            <li>Writing and maintaining tests is time-consuming.</li>
+            <li>Configuration is sometimes difficult.</li>
         </ul>
     </div>
 </section>
